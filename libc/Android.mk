@@ -607,6 +607,7 @@ libc_openbsd_src_files_32 += \
 libc_common_cflags := \
     -D_LIBC=1 \
     -Wall -Wextra -Wunused \
+    -fno-stack-protector \
 
 use_clang := $(USE_CLANG_PLATFORM_BUILD)
 
@@ -635,6 +636,7 @@ libc_common_cflags += \
     -Werror=int-to-pointer-cast \
     -Werror=type-limits \
     -Werror \
+    -fno-stack-protector \
 
 ifeq ($(strip $(DEBUG_BIONIC_LIBC)),true)
   libc_common_cflags += -DDEBUG
